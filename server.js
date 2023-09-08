@@ -1,7 +1,7 @@
 var socks = require('socksv5');
 ;
 var net = require('net');const os = require('os');
-
+require('dotenv').config();
 const networkInterfaces = os.networkInterfaces();
 for (const name of Object.keys(networkInterfaces)) {
     for (const net of networkInterfaces[name]) {
@@ -15,8 +15,8 @@ for (const name of Object.keys(networkInterfaces)) {
             accept();
           });
         
-        
-        server.listen(1080, 'localhost', function() {
+const port = process.env.PORT || 1080;
+        server.listen(port, 'localhost', function() {
 
           console.log('SOCKS server listening on port 1080');
         });
