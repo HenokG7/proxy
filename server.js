@@ -12,6 +12,7 @@ for (const name of Object.keys(networkInterfaces)) {
 }
 
  var server =  socks.createServer((info, accept, deny) => {
+            console.log("requested");
             accept();
           });
         
