@@ -19,7 +19,7 @@ for (const name of Object.keys(networkInterfaces)) {
 const port = process.env.PORT || 1080;
         server.listen(port, 'localhost', function() {
 
-          console.log('SOCKS server listening on port 1080');
+          console.log('SOCKS server listening on port'+port);
         });
         server.useAuth(socks.auth.UserPassword(function(user, password, cb) {
             cb(user === 'nodejs' && password === 'rules');}));
